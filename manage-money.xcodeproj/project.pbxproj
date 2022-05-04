@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7151D0D3281E944A009E3A77 /* InOutMoney_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151D0D2281E944A009E3A77 /* InOutMoney_TableViewCell.swift */; };
+		7151D0D8281E9BF8009E3A77 /* AddIncome_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151D0D7281E9BF8009E3A77 /* AddIncome_ViewController.swift */; };
+		7151D0DA281E9C10009E3A77 /* AddExpense_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151D0D9281E9C10009E3A77 /* AddExpense_ViewController.swift */; };
+		7151D0DD281E9C50009E3A77 /* ReportExpense_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151D0DC281E9C50009E3A77 /* ReportExpense_ViewController.swift */; };
+		718DA6F8281B5E9400DBFAFB /* FLCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 718DA6F7281B5E9400DBFAFB /* FLCharts */; };
 		7190EC67281053510082AC8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190EC66281053510082AC8B /* AppDelegate.swift */; };
 		7190EC69281053510082AC8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190EC68281053510082AC8B /* SceneDelegate.swift */; };
 		7190EC6E281053510082AC8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EC6C281053510082AC8B /* Main.storyboard */; };
@@ -17,9 +22,19 @@
 		7190EC832810640F0082AC8B /* Manage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190EC822810640F0082AC8B /* Manage_ViewController.swift */; };
 		7190EC862810642A0082AC8B /* Login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190EC852810642A0082AC8B /* Login_ViewController.swift */; };
 		7190EC89281064450082AC8B /* Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190EC88281064450082AC8B /* Register_ViewController.swift */; };
+		71BA4582281D900700C62136 /* WalletCell_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA4581281D900700C62136 /* WalletCell_TableViewCell.swift */; };
+		71EA34B528210B8C00E2F270 /* Report_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA34B428210B8C00E2F270 /* Report_TableViewCell.swift */; };
+		71FC74BA281150D900AEA4DE /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FC74B9281150D900AEA4DE /* constants.swift */; };
+		B4CE13833233DBBD4B8B5699 /* Pods_manage_money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1806AE7381C9605DA1FB79C9 /* Pods_manage_money.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1806AE7381C9605DA1FB79C9 /* Pods_manage_money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_manage_money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36C334550D45144AA9F3B437 /* Pods-manage-money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-manage-money.debug.xcconfig"; path = "Target Support Files/Pods-manage-money/Pods-manage-money.debug.xcconfig"; sourceTree = "<group>"; };
+		7151D0D2281E944A009E3A77 /* InOutMoney_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutMoney_TableViewCell.swift; sourceTree = "<group>"; };
+		7151D0D7281E9BF8009E3A77 /* AddIncome_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncome_ViewController.swift; sourceTree = "<group>"; };
+		7151D0D9281E9C10009E3A77 /* AddExpense_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpense_ViewController.swift; sourceTree = "<group>"; };
+		7151D0DC281E9C50009E3A77 /* ReportExpense_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExpense_ViewController.swift; sourceTree = "<group>"; };
 		7190EC63281053510082AC8B /* manage-money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "manage-money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7190EC66281053510082AC8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7190EC68281053510082AC8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +47,10 @@
 		7190EC822810640F0082AC8B /* Manage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manage_ViewController.swift; sourceTree = "<group>"; };
 		7190EC852810642A0082AC8B /* Login_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ViewController.swift; sourceTree = "<group>"; };
 		7190EC88281064450082AC8B /* Register_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register_ViewController.swift; sourceTree = "<group>"; };
+		71BA4581281D900700C62136 /* WalletCell_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCell_TableViewCell.swift; sourceTree = "<group>"; };
+		71EA34B428210B8C00E2F270 /* Report_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report_TableViewCell.swift; sourceTree = "<group>"; };
+		71FC74B9281150D900AEA4DE /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		7F637CC9B1B3C853B06C1C08 /* Pods-manage-money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-manage-money.release.xcconfig"; path = "Target Support Files/Pods-manage-money/Pods-manage-money.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +58,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4CE13833233DBBD4B8B5699 /* Pods_manage_money.framework in Frameworks */,
+				718DA6F8281B5E9400DBFAFB /* FLCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0117B2FBF304214422247A41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1806AE7381C9605DA1FB79C9 /* Pods_manage_money.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7151D0D5281E9B89009E3A77 /* AddIncome */ = {
+			isa = PBXGroup;
+			children = (
+				7151D0D7281E9BF8009E3A77 /* AddIncome_ViewController.swift */,
+			);
+			path = AddIncome;
+			sourceTree = "<group>";
+		};
+		7151D0D6281E9BB7009E3A77 /* AddExpense */ = {
+			isa = PBXGroup;
+			children = (
+				7151D0D9281E9C10009E3A77 /* AddExpense_ViewController.swift */,
+			);
+			path = AddExpense;
+			sourceTree = "<group>";
+		};
+		7151D0DB281E9C31009E3A77 /* ReportExpense */ = {
+			isa = PBXGroup;
+			children = (
+				7151D0DC281E9C50009E3A77 /* ReportExpense_ViewController.swift */,
+				71EA34B428210B8C00E2F270 /* Report_TableViewCell.swift */,
+			);
+			path = ReportExpense;
+			sourceTree = "<group>";
+		};
 		7190EC5A281053510082AC8B = {
 			isa = PBXGroup;
 			children = (
 				7190EC65281053510082AC8B /* manage-money */,
 				7190EC64281053510082AC8B /* Products */,
+				981B0909F845E6948292214F /* Pods */,
+				0117B2FBF304214422247A41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,11 +120,8 @@
 		7190EC65281053510082AC8B /* manage-money */ = {
 			isa = PBXGroup;
 			children = (
-				7190EC87281064330082AC8B /* Register */,
-				7190EC842810641B0082AC8B /* Login */,
-				7190EC81281063F60082AC8B /* Manage */,
-				7190EC80281063E20082AC8B /* Overview */,
-				7190EC7D281063BF0082AC8B /* Profile */,
+				71FC74B8281150BC00AEA4DE /* Commons */,
+				71FC74B7281150AE00AEA4DE /* Screens */,
 				7190EC66281053510082AC8B /* AppDelegate.swift */,
 				7190EC68281053510082AC8B /* SceneDelegate.swift */,
 				7190EC6C281053510082AC8B /* Main.storyboard */,
@@ -91,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				7190EC7B2810639A0082AC8B /* Overview_ViewController.swift */,
+				71BA4581281D900700C62136 /* WalletCell_TableViewCell.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -99,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				7190EC822810640F0082AC8B /* Manage_ViewController.swift */,
+				7151D0D2281E944A009E3A77 /* InOutMoney_TableViewCell.swift */,
 			);
 			path = Manage;
 			sourceTree = "<group>";
@@ -119,6 +174,38 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		71FC74B7281150AE00AEA4DE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				7151D0DB281E9C31009E3A77 /* ReportExpense */,
+				7151D0D6281E9BB7009E3A77 /* AddExpense */,
+				7151D0D5281E9B89009E3A77 /* AddIncome */,
+				7190EC87281064330082AC8B /* Register */,
+				7190EC842810641B0082AC8B /* Login */,
+				7190EC81281063F60082AC8B /* Manage */,
+				7190EC80281063E20082AC8B /* Overview */,
+				7190EC7D281063BF0082AC8B /* Profile */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		71FC74B8281150BC00AEA4DE /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				71FC74B9281150D900AEA4DE /* constants.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		981B0909F845E6948292214F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36C334550D45144AA9F3B437 /* Pods-manage-money.debug.xcconfig */,
+				7F637CC9B1B3C853B06C1C08 /* Pods-manage-money.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7190EC77281053520082AC8B /* Build configuration list for PBXNativeTarget "manage-money" */;
 			buildPhases = (
+				17CC5D5FCD4FD242E18F0F22 /* [CP] Check Pods Manifest.lock */,
 				7190EC5F281053510082AC8B /* Sources */,
 				7190EC60281053510082AC8B /* Frameworks */,
 				7190EC61281053510082AC8B /* Resources */,
@@ -135,6 +223,9 @@
 			dependencies = (
 			);
 			name = "manage-money";
+			packageProductDependencies = (
+				718DA6F7281B5E9400DBFAFB /* FLCharts */,
+			);
 			productName = "manage-money";
 			productReference = 7190EC63281053510082AC8B /* manage-money.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +254,9 @@
 				Base,
 			);
 			mainGroup = 7190EC5A281053510082AC8B;
+			packageReferences = (
+				718DA6F6281B5E9400DBFAFB /* XCRemoteSwiftPackageReference "FLCharts" */,
+			);
 			productRefGroup = 7190EC64281053510082AC8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -185,6 +279,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17CC5D5FCD4FD242E18F0F22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-manage-money-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7190EC5F281053510082AC8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -195,8 +314,15 @@
 				7190EC89281064450082AC8B /* Register_ViewController.swift in Sources */,
 				7190EC832810640F0082AC8B /* Manage_ViewController.swift in Sources */,
 				7190EC67281053510082AC8B /* AppDelegate.swift in Sources */,
+				7151D0DD281E9C50009E3A77 /* ReportExpense_ViewController.swift in Sources */,
 				7190EC862810642A0082AC8B /* Login_ViewController.swift in Sources */,
+				71EA34B528210B8C00E2F270 /* Report_TableViewCell.swift in Sources */,
+				7151D0D8281E9BF8009E3A77 /* AddIncome_ViewController.swift in Sources */,
 				7190EC69281053510082AC8B /* SceneDelegate.swift in Sources */,
+				71BA4582281D900700C62136 /* WalletCell_TableViewCell.swift in Sources */,
+				7151D0DA281E9C10009E3A77 /* AddExpense_ViewController.swift in Sources */,
+				7151D0D3281E944A009E3A77 /* InOutMoney_TableViewCell.swift in Sources */,
+				71FC74BA281150D900AEA4DE /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -328,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,11 +466,13 @@
 		};
 		7190EC78281053520082AC8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36C334550D45144AA9F3B437 /* Pods-manage-money.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BSXDPUFV4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "manage-money/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -357,7 +485,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "manage.money.manage-money";
+				PRODUCT_BUNDLE_IDENTIFIER = com.straym.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -367,11 +495,13 @@
 		};
 		7190EC79281053520082AC8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F637CC9B1B3C853B06C1C08 /* Pods-manage-money.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BSXDPUFV4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "manage-money/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -384,7 +514,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "manage.money.manage-money";
+				PRODUCT_BUNDLE_IDENTIFIER = com.straym.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -414,6 +544,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		718DA6F6281B5E9400DBFAFB /* XCRemoteSwiftPackageReference "FLCharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/francescoleoni98/FLCharts";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		718DA6F7281B5E9400DBFAFB /* FLCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 718DA6F6281B5E9400DBFAFB /* XCRemoteSwiftPackageReference "FLCharts" */;
+			productName = FLCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7190EC5B281053510082AC8B /* Project object */;
 }

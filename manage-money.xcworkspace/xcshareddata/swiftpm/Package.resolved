@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FLCharts",
+        "repositoryURL": "https://github.com/francescoleoni98/FLCharts",
+        "state": {
+          "branch": "main",
+          "revision": "0182dc53b2c6f8c3c6cebfe47e626309dbb30c9d",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

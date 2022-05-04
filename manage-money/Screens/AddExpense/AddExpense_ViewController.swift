@@ -1,13 +1,13 @@
 //
-//  Manage_ViewController.swift
+//  AddExpense_ViewController.swift
 //  manage-money
 //
-//  Created by Thu Tinh on 20/04/2022.
+//  Created by Thu Tinh on 01/05/2022.
 //
 
 import UIKit
 
-class Manage_ViewController: UIViewController {
+class AddExpense_ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
