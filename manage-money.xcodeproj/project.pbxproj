@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		715149EC28242AE8008B77E2 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715149EB28242AE8008B77E2 /* Income.swift */; };
+		715149EE28242AF7008B77E2 /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715149ED28242AF7008B77E2 /* Cost.swift */; };
 		7151D0D3281E944A009E3A77 /* InOutMoney_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151D0D2281E944A009E3A77 /* InOutMoney_TableViewCell.swift */; };
 		7151D0D8281E9BF8009E3A77 /* AddIncome_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151D0D7281E9BF8009E3A77 /* AddIncome_ViewController.swift */; };
 		7151D0DA281E9C10009E3A77 /* AddExpense_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151D0D9281E9C10009E3A77 /* AddExpense_ViewController.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		1806AE7381C9605DA1FB79C9 /* Pods_manage_money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_manage_money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C334550D45144AA9F3B437 /* Pods-manage-money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-manage-money.debug.xcconfig"; path = "Target Support Files/Pods-manage-money/Pods-manage-money.debug.xcconfig"; sourceTree = "<group>"; };
+		715149EB28242AE8008B77E2 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		715149ED28242AF7008B77E2 /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
 		7151D0D2281E944A009E3A77 /* InOutMoney_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutMoney_TableViewCell.swift; sourceTree = "<group>"; };
 		7151D0D7281E9BF8009E3A77 /* AddIncome_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncome_ViewController.swift; sourceTree = "<group>"; };
 		7151D0D9281E9C10009E3A77 /* AddExpense_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpense_ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 				1806AE7381C9605DA1FB79C9 /* Pods_manage_money.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		715149EA28242A1D008B77E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				715149EB28242AE8008B77E2 /* Income.swift */,
+				715149ED28242AF7008B77E2 /* Cost.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7151D0D5281E9B89009E3A77 /* AddIncome */ = {
@@ -120,6 +133,7 @@
 		7190EC65281053510082AC8B /* manage-money */ = {
 			isa = PBXGroup;
 			children = (
+				715149EA28242A1D008B77E2 /* Models */,
 				71FC74B8281150BC00AEA4DE /* Commons */,
 				71FC74B7281150AE00AEA4DE /* Screens */,
 				7190EC66281053510082AC8B /* AppDelegate.swift */,
@@ -322,6 +336,8 @@
 				71BA4582281D900700C62136 /* WalletCell_TableViewCell.swift in Sources */,
 				7151D0DA281E9C10009E3A77 /* AddExpense_ViewController.swift in Sources */,
 				7151D0D3281E944A009E3A77 /* InOutMoney_TableViewCell.swift in Sources */,
+				715149EC28242AE8008B77E2 /* Income.swift in Sources */,
+				715149EE28242AF7008B77E2 /* Cost.swift in Sources */,
 				71FC74BA281150D900AEA4DE /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

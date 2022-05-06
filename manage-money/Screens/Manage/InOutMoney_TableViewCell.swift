@@ -9,6 +9,11 @@ import UIKit
 
 class InOutMoney_TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lbMoney: UILabel!
+    @IBOutlet weak var lbDate: UILabel!
+    @IBOutlet weak var lbType: UILabel!
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var lbInOut: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
