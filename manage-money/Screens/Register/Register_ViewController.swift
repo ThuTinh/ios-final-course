@@ -27,9 +27,7 @@ class Register_ViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet weak var txtPhone: UITextField!
     
     override func viewDidLoad() {
-        txtUsername.text = "demo"
-        txtPassword.text = "1234"
-        txtPhone.text = "28357845"
+        txtPassword.isSecureTextEntry = true
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

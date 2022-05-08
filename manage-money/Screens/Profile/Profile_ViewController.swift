@@ -14,36 +14,36 @@ class Profile_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         imgAvatar.layer.borderWidth = 1
         imgAvatar.layer.masksToBounds = false
         imgAvatar.layer.borderColor = UIColor.black.cgColor
         imgAvatar.layer.cornerRadius = imgAvatar.frame.height/2
         imgAvatar.clipsToBounds = true
+       
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let token = UserDefaults.standard.string(forKey: "token")
         let username = UserDefaults.standard.string(forKey: "username")
         let avatar = UserDefaults.standard.string(forKey: "avatar")
         if let token = token, let username = username, let avatar = avatar  {
-           
+            checkAuthen()
             lbUsername.text = username
             print(Constants.host + "/" + avatar)
             imgAvatar.imageFrom(url: URL(string: Constants.host + "/" + avatar)!)
-            
-            
+   
         } else {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let loginController = sb.instantiateViewController(withIdentifier: "LOGIN") as! Login_ViewController
-            self.navigationController?.pushViewController(loginController, animated: true)
+            navigationToLogin()
         }
-       
     }
     
     @IBAction func onLogout(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "token")
         UserDefaults.standard.removeObject(forKey: "username")
         UserDefaults.standard.removeObject(forKey: "avatar")
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let loginController = sb.instantiateViewController(withIdentifier: "LOGIN") as! Login_ViewController
-        self.navigationController?.pushViewController(loginController, animated: true)
+        self.navigationToLogin()
     }
 }
 

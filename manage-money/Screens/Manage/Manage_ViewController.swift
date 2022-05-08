@@ -16,11 +16,24 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         tbInOutMonney.dataSource = self
         tbInOutMonney.delegate = self
-        setIncomesToday()
-        setCostsByTodayDate()
-
+      
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("HOOOOOOOO")
+        let token = UserDefaults.standard.string(forKey: "token")
+        let username = UserDefaults.standard.string(forKey: "username")
+        let avatar = UserDefaults.standard.string(forKey: "avatar")
+        if let token = token, let username = username, let avatar = avatar  {
+            checkAuthen()
+            setIncomesToday()
+            setCostsByTodayDate()
+            
+        } else {
+            navigationToLogin()
+            
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return costs.count + incomes.count
     }
@@ -33,14 +46,14 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.lbName.text = costs[index]["name"] as! String
             cell.lbDate.text = costs[index]["date"] as! String
             cell.lbType.text = costs[index]["type"] as! String
-            cell.lbMoney.text = String(costs[index]["cost"] as! Double)
+            cell.lbMoney.text = convertCurrency(money: costs[index]["cost"] as! Double)
             
         } else {
             cell.lbInOut.text = "In"
             cell.lbName.text = incomes[indexPath.row]["name"] as! String
             cell.lbDate.text = incomes[indexPath.row]["date"] as! String
             cell.lbType.text = incomes[indexPath.row]["type"] as! String
-            cell.lbMoney.text = String(incomes[indexPath.row]["income"] as! Double)
+            cell.lbMoney.text = convertCurrency(money: incomes[indexPath.row]["income"] as! Double)
         }
         return cell
     }
@@ -74,14 +87,13 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
                             let i =  json["data"] as!  [Dictionary<String, Any>]
                             self.incomes = i
                             self.tbInOutMonney.reloadData()
-                            print(i[0]["name"]!)
                         }
                     } else {
-                        print("tb")
+                        print("get Income by date failed")
                         
                     }
                 } catch let err {
-                    print("tbb")
+                    print(err.localizedDescription)
                 }
             }
             
@@ -90,7 +102,6 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func setCostsByTodayDate() {
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let date = formatter.string(from: Date())
@@ -103,7 +114,7 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
         
         URLSession.shared.dataTask(with: request) { data, response, err in
             if err != nil {
-                print("tbbbbb")
+                print(err?.localizedDescription)
             } else if let data = data {
                 
                 do {
@@ -114,14 +125,13 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
                             let i =  json["data"] as!  [Dictionary<String, Any>]
                             self.costs = i
                             self.tbInOutMonney.reloadData()
-                            print(i[0]["costType"]!)
                         }
                     } else {
-                        print("tb")
+                        print("Get cost by date failed")
                         
                     }
                 } catch let err {
-                    print("tbb")
+                    print(err.localizedDescription)
                 }
             }
             

@@ -19,5 +19,6 @@ class Constants {
     static let getCostByMonth = host + "/costs/"
     static let getWallets = host + "/wallets"
     static let getDataChart = host + "/total-in-out"
+    static let checkAuthen = host + "/check-authen"
     
 }

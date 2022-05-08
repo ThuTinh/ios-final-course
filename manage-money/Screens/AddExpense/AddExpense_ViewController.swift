@@ -18,7 +18,7 @@ class AddExpense_ViewController: UIViewController, UIPickerViewDataSource, UIPic
     weak var pickerView: UIPickerView?
     let datepickerView: UIDatePicker = UIDatePicker()
     
-    var names = ["Shopping","Cafe" ,"Others"]
+    var names = ["Food","Shopping","Cafe","Family", "Entertainment","Doctor","Pet","Transport","Travel","Others"]
     var wallets = ["NEC", "PLAY", "EDU", "FFA", "LTSS", "GIVE", "ALL"]
     var costTypes = ["MUST_HAVE", "NICE_TO_HAVE", "WASTED"]
     

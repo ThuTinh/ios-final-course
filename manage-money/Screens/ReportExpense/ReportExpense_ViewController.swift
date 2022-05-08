@@ -14,6 +14,11 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var tbReport: UITableView!
     @IBOutlet weak var tbHeader: UIView!
     
+    
+    @IBOutlet weak var lbTotalMustHave: UILabel!
+    @IBOutlet weak var lbTotalNiceTohave: UILabel!
+    @IBOutlet weak var lbTotalWasted: UILabel!
+    
     var costs: [Dictionary<String, Any>]  = []
     
     override func viewDidLoad() {
@@ -34,13 +39,14 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
         cell.lbContent.text = costs[indexPath.row]["name"] as! String
         cell.lbDate.text = costs[indexPath.row]["date"] as! String
         let typeCost = costs[indexPath.row]["costType"] as! String
+        let money = convertCurrency(money: costs[indexPath.row]["cost"] as! Double)
         switch typeCost {
             case "MUST_HAVE":
-            cell.lbMustHave.text = String(costs[indexPath.row]["cost"] as! Double)
+            cell.lbMustHave.text = money
         case "NICE_TO_HAVE":
-            cell.lbNiceToHave.text = String(costs[indexPath.row]["cost"] as! Double)
+            cell.lbNiceToHave.text = money
         default:
-            cell.lbWasted.text = String(costs[indexPath.row]["cost"] as! Double)
+            cell.lbWasted.text = money
         }
         return cell
     }
@@ -60,7 +66,7 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
         
         URLSession.shared.dataTask(with: request) { data, response, err in
             if err != nil {
-                print("tbbbbb")
+                print(err?.localizedDescription)
             } else if let data = data {
                 
                 do {
@@ -72,13 +78,32 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
                             self.costs = i
                             self.tbReport.reloadData()
                             print(i[0]["name"]!)
+                            var totalWasted = 0.0
+                            var totalNiceToHave = 0.0
+                            var totalMustHave = 0.0
+                            i.forEach { c in
+                                let typeCost = c["costType"] as! String
+                                let money =  c["cost"] as! Double
+                                switch typeCost {
+                                    case "MUST_HAVE":
+                                    totalMustHave += money
+                                case "NICE_TO_HAVE":
+                                    totalNiceToHave += money
+                                default:
+                                    totalWasted += money
+                                }
+                            }
+                            self.lbTotalWasted.text = self.convertCurrency(money: totalWasted)
+                            self.lbTotalMustHave.text = self.convertCurrency(money: totalMustHave)
+                            self.lbTotalNiceTohave.text = self.convertCurrency(money: totalNiceToHave)
+                            
                         }
                     } else {
-                        print("tb")
+                        print("Get cost by month failed")
                         
                     }
                 } catch let err {
-                    print("tbb")
+                    print(err.localizedDescription)
                 }
             }
             

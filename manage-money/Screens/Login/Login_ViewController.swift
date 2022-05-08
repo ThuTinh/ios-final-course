@@ -13,13 +13,13 @@ class Login_ViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     
     override func viewDidLoad() {
+        txtPassword.isSecureTextEntry = true
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func clickLogin(_ sender: Any) {
-        print("Login... start")
         let url = URL(string: Constants.loginUrl)
         var request =  URLRequest(url: url!)
         request.httpMethod = "POST"
