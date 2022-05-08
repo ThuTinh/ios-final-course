@@ -122,7 +122,7 @@ class Overview_ViewController: UIViewController, UITableViewDataSource, UITableV
                                 self.dataChart = json["data"] as! [String: Any]
                                 self.lbIncome.text = self.convertCurrency(money: self.dataChart["income"] as! Double)
                                 self.lbCost.text = self.convertCurrency(money: self.dataChart["cost"] as! Double)
-                                let total = (self.dataChart["income"] as! Double) + (self.dataChart["cost"] as! Double )
+                                let total = (self.dataChart["income"] as! Double) - (self.dataChart["cost"] as! Double )
                                 self.lbSum.text = self.convertCurrency(money: total)
                                 self.runOnMain(after: 2) {
                                     self.pieChart.updateData([FLPiePlotable(value: self.dataChart["cost"] as! Double, key: Key(key: "Cost", color: FLColor(hex: "f54242"))),

@@ -7,28 +7,51 @@
 
 import UIKit
 
-class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
- 
+class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
-
     @IBOutlet weak var tbReport: UITableView!
     @IBOutlet weak var tbHeader: UIView!
-    
-    
+    @IBOutlet weak var txtMonth: UITextField!
     @IBOutlet weak var lbTotalMustHave: UILabel!
     @IBOutlet weak var lbTotalNiceTohave: UILabel!
     @IBOutlet weak var lbTotalWasted: UILabel!
     
+    weak var pickerView: UIPickerView?
+    
     var costs: [Dictionary<String, Any>]  = []
+    var months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tbReport.delegate = self
         tbReport.dataSource = self
-        getCostByMonth()
+        
+        //allow tap on screen to remove text field input from screen
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        //UIPICKER
+        let pickerView = UIPickerView()
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        txtMonth.delegate = self
+        txtMonth.inputView = pickerView
+        self.pickerView = pickerView
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.month], from: date)
+        txtMonth.text = "\(components.month!)"
+        getCostByMonth(month: components.month ?? 1)
 
     }
     
+    
+    @IBAction func onReport(_ sender: Any) {
+        var month = Int(txtMonth.text!) ?? 1
+       self.getCostByMonth(month: month)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return costs.count
@@ -43,22 +66,28 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
         switch typeCost {
             case "MUST_HAVE":
             cell.lbMustHave.text = money
+            cell.lbNiceToHave.text = ""
+            cell.lbWasted.text = ""
+
         case "NICE_TO_HAVE":
             cell.lbNiceToHave.text = money
+            cell.lbMustHave.text = ""
+            cell.lbWasted.text = ""
         default:
             cell.lbWasted.text = money
+            cell.lbNiceToHave.text = ""
+            cell.lbMustHave.text = ""
         }
         return cell
     }
     
-    func getCostByMonth() {
+    func getCostByMonth(month: Int) {
         let date = Date()
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month], from: date)
+        let components = calendar.dateComponents([.year], from: date)
         let year = components.year
-        let month = components.month
         
-        let url = URL(string: Constants.getCostByMonth + "\(month!)/\(year!)")
+        let url = URL(string: Constants.getCostByMonth + "\(month)/\(year!)")
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         let token = UserDefaults.standard.string(forKey: "token") ?? ""
@@ -68,7 +97,8 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
             if err != nil {
                 print(err?.localizedDescription)
             } else if let data = data {
-                
+                print("Test : \(month) , \(data)")
+      
                 do {
                     let json = try JSONSerialization.jsonObject(with: data,  options: .mutableContainers) as! [String: Any]
                     
@@ -76,8 +106,6 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
                         DispatchQueue.main.sync {
                             let i =  json["data"] as!  [Dictionary<String, Any>]
                             self.costs = i
-                            self.tbReport.reloadData()
-                            print(i[0]["name"]!)
                             var totalWasted = 0.0
                             var totalNiceToHave = 0.0
                             var totalMustHave = 0.0
@@ -96,6 +124,7 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
                             self.lbTotalWasted.text = self.convertCurrency(money: totalWasted)
                             self.lbTotalMustHave.text = self.convertCurrency(money: totalMustHave)
                             self.lbTotalNiceTohave.text = self.convertCurrency(money: totalNiceToHave)
+                            self.tbReport.reloadData()
                             
                         }
                     } else {
@@ -109,5 +138,22 @@ class ReportExpense_ViewController: UIViewController, UITableViewDelegate, UITab
             
         }.resume()
     }
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return months.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+       return "\(months[row])"
+       }
+
+       func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+           txtMonth.text = "\(months[row])"
+       }
     
 }

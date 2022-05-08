@@ -19,7 +19,7 @@ class AddExpense_ViewController: UIViewController, UIPickerViewDataSource, UIPic
     let datepickerView: UIDatePicker = UIDatePicker()
     
     var names = ["Food","Shopping","Cafe","Family", "Entertainment","Doctor","Pet","Transport","Travel","Others"]
-    var wallets = ["NEC", "PLAY", "EDU", "FFA", "LTSS", "GIVE", "ALL"]
+    var wallets = ["NEC", "PLAY", "EDU", "FFA", "LTSS", "GIVE"]
     var costTypes = ["MUST_HAVE", "NICE_TO_HAVE", "WASTED"]
     
     
@@ -175,7 +175,7 @@ class AddExpense_ViewController: UIViewController, UIPickerViewDataSource, UIPic
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
 
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-//        datepickerView.center.x = toolbar.center.x
+
         txtDate.inputAccessoryView = toolbar
         txtDate.inputView = datepickerView
     }

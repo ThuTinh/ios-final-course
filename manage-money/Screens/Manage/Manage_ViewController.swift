@@ -10,30 +10,34 @@ import UIKit
 class Manage_ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tbInOutMonney: UITableView!
+    @IBOutlet weak var txtDate: UITextField!
+    let datepickerView: UIDatePicker = UIDatePicker()
+    
     var costs: [Dictionary<String, Any>]  = []
     var incomes: [Dictionary<String, Any>]  = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let date = formatter.string(from: Date())
+        txtDate.text = date
         tbInOutMonney.dataSource = self
         tbInOutMonney.delegate = self
+        
+        setDatePicker()
+        datepickerView.frame = CGRect(x: 0, y: view.frame.size.height - 55, width: view.frame.size.width, height: 100)
       
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("HOOOOOOOO")
-        let token = UserDefaults.standard.string(forKey: "token")
-        let username = UserDefaults.standard.string(forKey: "username")
-        let avatar = UserDefaults.standard.string(forKey: "avatar")
-        if let token = token, let username = username, let avatar = avatar  {
-            checkAuthen()
-            setIncomesToday()
-            setCostsByTodayDate()
-            
-        } else {
-            navigationToLogin()
-            
-        }
+        getDataScreen()
     }
+    
+    
+    @IBAction func onInOutClick(_ sender: Any) {
+        getDataScreen()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return costs.count + incomes.count
     }
@@ -64,11 +68,8 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func setIncomesToday()  {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let date = formatter.string(from: Date())
         
-        let url = URL(string: Constants.getIncomeByDate + date)
+        let url = URL(string: Constants.getIncomeByDate + txtDate.text!)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         let token = UserDefaults.standard.string(forKey: "token") ?? ""
@@ -102,11 +103,7 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func setCostsByTodayDate() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let date = formatter.string(from: Date())
-        
-        let url = URL(string: Constants.getCostByDate + date)
+        let url = URL(string: Constants.getCostByDate + txtDate.text!)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         let token = UserDefaults.standard.string(forKey: "token") ?? ""
@@ -139,6 +136,47 @@ class Manage_ViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    func setDatePicker() {
+        //Format Date
+        datepickerView.datePickerMode = .date
+
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.frame = CGRect(x: 0, y: view.frame.size.height - 55, width: view.frame.size.width, height: 100)
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+
+        txtDate.inputAccessoryView = toolbar
+        txtDate.inputView = datepickerView
+    }
+
+    @objc func doneDatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        txtDate.text = formatter.string(from: datepickerView.date)
+        self.view.endEditing(true)
+    }
+
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
     
+    func getDataScreen() {
+        let token = UserDefaults.standard.string(forKey: "token")
+        let username = UserDefaults.standard.string(forKey: "username")
+        let avatar = UserDefaults.standard.string(forKey: "avatar")
+        if let token = token, let username = username, let avatar = avatar  {
+            checkAuthen()
+            setIncomesToday()
+            setCostsByTodayDate()
+            
+        } else {
+            navigationToLogin()
+            
+        }
+    }
 
 }

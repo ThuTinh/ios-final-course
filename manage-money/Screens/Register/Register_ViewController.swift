@@ -56,7 +56,6 @@ class Register_ViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func uploadImageAndRegisterUser()  {
-        print("upload")
         var url = URL(string: Constants.uploadFileUrl)
         let boundary = UUID().uuidString
         let session = URLSession.shared
@@ -67,7 +66,7 @@ class Register_ViewController: UIViewController, UINavigationControllerDelegate,
         
         var data = Data()
         data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
-        data.append("Content-Disposition: form-data; name=\"avatar-\(txtUsername.text!)\"; filename=\"avatar-\(txtUsername.text!).png\"\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"avatar\"; filename=\"avatar-\(txtUsername.text!).png\"\r\n".data(using: .utf8)!)
         data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
         data.append((imgAvatar.image?.pngData())!)
         data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
@@ -130,6 +129,7 @@ class Register_ViewController: UIViewController, UINavigationControllerDelegate,
                 }
                 
             } else {
+                print("Faillllll")
                 print(err?.localizedDescription)
             }
             
